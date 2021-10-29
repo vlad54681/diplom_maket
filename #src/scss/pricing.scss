@@ -1,0 +1,63 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@import "fonts";
+
+$whiteColor: #fff;
+$textColor: #83a7a5;
+$titleColor: #0f5f5c;
+$contentWidth: 70%;
+
+.started-with-warpik {
+	// height: 760px;
+	background-color: rgba(238, 241, 236, 0.6);
+	max-width: 1500px;
+	margin: 0 auto;
+	&-title {
+		margin: 0 auto 20px auto !important;
+		line-height: 38px !important;
+		&::after {
+			content: none !important;
+		}
+	}
+	&-sub-title {
+		margin-bottom: 50px;
+	}
+}
+@media (max-width: 850px) {
+	.started-with-warpik-title {
+		padding-top: 100px;
+	}
+	.block-title_another {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.pricing-special-offer {
+		padding-bottom: 10px;
+		margin-bottom: 40px;
+	}
+	.plan-block_another {
+		margin-bottom: 30px !important;
+	}
+}
+.pricing-header {
+	bottom: 0;
+}
+.pricing-special-offer {
+	color: $textColor;
+	font-family: Roboto;
+	font-size: 14px;
+	line-height: 38px;
+	text-align: center;
+	padding-bottom: 65px;
+	margin-bottom: 80px;
+}

@@ -1,0 +1,260 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@import "fonts";
+
+$whiteColor: #fff;
+$textColor: #83a7a5;
+$titleColor: #0f5f5c;
+$contentWidth: 70%;
+
+ul {
+	padding-inline-start: unset;
+	margin-block-start: unset;
+	margin-block-end: unset;
+	list-style-type: none;
+}
+
+.about__bg2 {
+	// position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	height: 100%;
+	background: url("../img/about_welcome.png") 0 0 / cover no-repeat;
+}
+.about__bg3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 200px;
+	width: 100%;
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+.about__bg4 {
+	height: 100%;
+	background: rgba(45, 110, 112, 0.6);
+}
+
+.about__welcome {
+	position: relative;
+	width: 100%;
+	// height: 660px;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	&-content {
+		// width: 100%;
+		// max-width: 1500px;
+		// height: 100%;
+		padding: 11% 0 11% 0;
+		margin: 0 auto;
+	}
+	.about__about a {
+		opacity: 1;
+		color: $whiteColor;
+	}
+
+	max-width: 1500px;
+	//height: 660px;
+	margin: 0 auto;
+	background: url("../img/about_welcome.png") 0 0 / 100% 100% no-repeat;
+
+	&-info {
+		text-align: center;
+		position: relative;
+		bottom: 75%;
+		margin: 0 auto;
+
+		width: 60%;
+	}
+	&-title {
+		color: $whiteColor;
+		font-family: Roboto;
+		font-size: 50px;
+		font-weight: 300;
+		line-height: 60px;
+
+		margin-bottom: 40px;
+	}
+
+	&-link {
+		display: inline-block;
+		// width: 230px;
+		// height: 50px;
+
+		border-radius: 3px;
+
+		background-color: #6fb048;
+		white-space: nowrap;
+		&:hover {
+			cursor: pointer;
+			opacity: 0.9;
+		}
+		& a {
+			text-decoration: none;
+			color: $whiteColor;
+			font-family: Montserrat;
+			font-size: 14px;
+			text-transform: uppercase;
+			line-height: 50px;
+			&:hover {
+				color: $whiteColor;
+			}
+			padding: 20px 25px;
+		}
+	}
+}
+.about-us {
+	margin: 0 auto;
+	max-width: 1500px;
+	&-text {
+		width: 66%;
+		margin: 0 auto;
+	}
+	&__facilities-list {
+		//	height: 297px;
+		margin: 62px auto 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&-content {
+		width: $contentWidth;
+		height: 100%;
+		margin: 96px auto 0 auto;
+	}
+}
+.meet-team {
+	background-color: #eef1ec;
+
+	max-width: 1500px;
+	margin: 0 auto;
+	&-container {
+		padding: 80px 0 120px 0;
+		margin: 0 auto;
+		width: $contentWidth;
+	}
+
+	&__sub-title {
+		max-width: 65%;
+		margin: 0 auto 90px auto;
+	}
+}
+
+.team-members {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 0 40px;
+
+	&-item {
+		width: 32%;
+		//height: 200px;
+	}
+	&-joyce {
+		background: url("../img/joyce.png") 0 0 / contain no-repeat;
+	}
+	&-name {
+		margin-top: 65%;
+		color: $titleColor;
+		font-family: Roboto;
+		font-size: 15px;
+		font-weight: 500;
+
+		line-height: 22px;
+	}
+	&-post {
+		color: $textColor;
+		font-family: Roboto;
+		font-size: 14px;
+
+		line-height: 22px;
+	}
+	&-angela {
+		background: url("../img/angela.png") 0 0 / contain no-repeat;
+	}
+	&-james {
+		background: url("../img/james.png") 0 0 / contain no-repeat;
+	}
+}
+
+@media (max-width: 1000px) {
+	.about__welcome-title {
+		font-size: 40px;
+	}
+	.about__welcome-title {
+		font-size: 20px;
+		line-height: 2em;
+	}
+}
+@media (max-width: 400px) {
+	.about__welcome {
+		&-title {
+			font-size: 16px;
+			line-height: 2em;
+		}
+		&-link {
+			& a {
+				padding: 0 10px;
+				line-height: 2.5em;
+				font-size: 12px;
+			}
+		}
+	}
+}
+@media (max-width: 900px) {
+	.about-us-content {
+		margin: 50px auto 0 auto;
+		width: 90%;
+	}
+	.about-us-title {
+		margin-bottom: 40px;
+	}
+	.about-us__facilities-list {
+		margin-bottom: 30px !important;
+	}
+	.meet-team-container {
+		width: 90%;
+		padding: 30px 0;
+	}
+	.meet-team__block-title {
+		margin-bottom: 30px;
+	}
+	.meet-team__sub-title {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 500px) {
+	.block-title__sub-title {
+		font-size: 12px !important;
+	}
+	.about-us-text {
+		font-size: 14px;
+	}
+	.team-members {
+		padding-right: 10px;
+		padding-left: 10px;
+		display: block;
+		&-name {
+			width: 300%;
+		}
+		&-post {
+			width: 200%;
+		}
+		&-item {
+			width: 20%;
+			height: 60px;
+			padding-left: 120px;
+		}
+	}
+}
